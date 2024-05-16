@@ -1,0 +1,139 @@
+.list-page__movies-container {
+    width: 300px;
+    margin: 50px 0px 0px 50px;
+}
+
+.saved-movie-title {
+    color: white;
+    font-family: Bahnschrift;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.list-page__empty {
+    color: white;
+    font-family: Bahnschrift;
+    font-size: 25px;
+    text-align: center;
+}
+
+.saved-movie-list {
+    display: grid;
+    grid-template-columns: auto auto;
+    list-style-type: none;
+    row-gap: 10px;
+}
+
+.saved-movie-list-item {
+    width: 148px;
+}
+
+.saved-movie-poster {
+    width: 130px;
+    border-radius: 10px;
+}
+
+.saved-movie-item-title {
+    color: white;
+    font-family: Bahnschrift;
+    font-size: 18px;
+}
+
+.delete-saved-movie {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    background-color: yellow;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    margin-left: 28px;
+}
+
+.list-page__button {
+    font-size: 15px;
+    font-family: Bahnschrift;
+    padding: 5px 10px;
+    background-color: yellow;
+    border-radius: 25px;
+    border: none;
+    margin: 25px 65px 0px 30px;
+}
+
+.link-page__movies-watch-button {
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-family: Bahnschrift;
+}
+
+@media (max-width: 600px) {
+    .saved-movie-list {
+        display: grid;
+        grid-template-columns: auto;
+        list-style-type: none;
+        row-gap: 10px;
+        justify-content: center;
+    }
+
+    .list-page__movies-container {
+        width: 200px;
+        margin: 25px 0px 0px 50px;
+    }
+
+    .list-page__container {
+        width: 300px;
+    }
+    
+    
+}
+
+@media (max-width: 550px) {
+    .list-page__movies-container {
+        width: 150px;
+        margin: 50px 0px 0px 26%;
+    }
+
+    .list-page__container {
+        width: 100%;
+    }
+
+    .saved-movie-poster {
+        width: 80px;
+        border-radius: 10px;
+    }
+
+    .saved-movie-list-item {
+        width: 80px;
+    }
+
+    .saved-movie-item-title {
+        font-size: 15px;
+    }
+    
+
+    .saved-movie-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .list-page__movies-container {
+        width: 100px;
+        margin: 50px 0px 0px 0px;
+    }
+
+    .list-page__container {
+        width: 100px;
+    }
+
+    .saved-movie-title {
+        font-size: 25px;
+    }
+
+    .list-page__empty {
+        font-size: 15px;
+    }
+    
+}

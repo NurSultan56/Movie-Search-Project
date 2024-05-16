@@ -1,0 +1,150 @@
+.poster {
+    height: 400px;
+    border-radius: 20px ;
+    width: 270px;
+}
+
+.movie-item-title {
+    font-family: Bahnschrift;
+    font-size: 25px;
+    margin: 10px 0px 0px 5px;
+    color: white;
+}
+
+.movie-item {
+    width: 270px;
+    margin-bottom: 60px;
+}
+
+.movie-list-item {
+    width: 270px;
+}
+
+.movie-list {
+    
+    list-style-type: none;
+    margin: 50px 0px 0px 5% ;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2%;
+    row-gap: 80px;
+}
+
+.movie-item-add-to-list {
+    position: absolute;
+    background-color: yellow;
+    border-top-left-radius: 20px;
+    border: none;
+    padding: 10px 10px;
+    font-family: Bahnschrift;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.movie-item-added-to-list {
+    position: absolute;
+    background-color: rgb(68, 255, 0);
+    border-top-left-radius: 20px;
+    border: none;
+    padding: 10px 10px;
+    font-family: Bahnschrift;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.movie-item-add-to-list:hover {
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.movies {
+    width: 65%;
+}
+
+.loading-header {
+    font-size: 40px;
+    font-family: Bahnschrift;
+    color: white;
+    width: 950px;
+    margin: 50px 0px 0px 50px;
+    height: 78vh;
+    text-align: center;
+}
+
+.search-error-header {
+    font-size: 40px;
+    font-family: Bahnschrift;
+    color: white;
+    width: 950px;
+    margin: 50px 0px 0px 50px;
+    height: 78vh;
+    text-align: center;
+}
+
+.error-header{
+    font-size: 40px;
+    font-family: Bahnschrift;
+    color: white;
+    width: 950px;
+    margin: 50px 0px 0px 50px;
+    height: 78vh;
+    text-align: center;
+}
+
+@media (max-width: 1325px) {
+    .poster {
+        height: 270px;
+        border-radius: 20px ;
+        width: 200px;
+    }
+    .movie-item-title {
+        font-family: Bahnschrift;
+        font-size: 20px;
+        margin: 10px 0px 0px 5px;
+        color: white;
+    }
+    .movie-item {
+        width: 200px;
+        margin-bottom: 30px;
+    }
+
+    .movie-list-item {
+        width: 150px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .poster {
+        height: 270px;
+        border-radius: 20px ;
+        width: 200px;
+    }
+    .movie-list {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 960px) {
+    .poster {
+        height: 80%;
+        width: 80%;
+    }
+    .movie-list {
+        margin-left: 30%;
+        grid-template-columns: auto;
+        width: 70%;
+    }
+}
+
+@media (max-width: 360px) {
+    .poster {
+        height: 250px;
+        width: 150px;
+    }
+    .movie-list {
+        margin-left: 30px;
+        grid-template-columns: auto;
+        width: 70%;
+        row-gap: 15px;
+    }
+}

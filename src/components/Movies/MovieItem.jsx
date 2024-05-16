@@ -1,26 +1,62 @@
-import React from "react";
-
-import {useDispacth} from 'react-redux'
+import React, { useEffect, useState } from "react";
+import './movie.css'
+import { useDispatch, useSelector} from 'react-redux'
 import { addToList } from "../../store/reducer";
+import { deleteFromList } from "../../store/reducer";
 
-function MovieItem ({title, description, id}) {
-    let dispatch = useDispacth()
+function MovieItem({ Title, Poster, imdbID, Year}) {
+    let notClickedSavedMovies=useSelector(state=>state.movies.notClickedSavedMovies);
+    let [notClicked,setNotClicked]=useState(true);
+    let [clickedButton,setClickedButton]=(useState('movie-item-add-to-list'));
+    let [buttonInnerText, setButtonInnerText] = useState('ADD TO LIST')
+    let dispatch = useDispatch()
+    let savedMovies=useSelector((state)=>state.movies.savedMovies);
+
+    useEffect(()=>{
+        if((savedMovies.findIndex(item=>item.imdbID===imdbID)) >= 0 ){
+            setNotClicked(false)
+            setClickedButton('movie-item-added-to-list')
+        } else {
+            setNotClicked(true)
+            setClickedButton('movie-item-add-to-list')
+        }
+    }, [savedMovies])
+
+    function handleClick(){
+        if(notClicked){
+            setClickedButton('movie-item-added-to-list');
+            setButtonInnerText('ADDED')
+            dispatch(addToList({
+                Title: Title,
+                Year: Year,
+                imdbID: imdbID,
+                Poster: Poster,
+            }));
+        }
+        else{
+            dispatch(deleteFromList({
+                Title: Title,
+                Year: Year,
+                imdbID: imdbID,
+                Poster: Poster,
+            }))
+            setClickedButton('movie-item-add-to-list');
+            setButtonInnerText('ADD TO LIST')
+        }
+        setNotClicked(!notClicked);
+
+    }
 
     return (
         <>
-        <div className="movie-item">
-            <h3 className="movie-item-title"></h3>
-                <p className="movie-item-description">
+        
+            <div className="movie-item">
+            <button disabled={!notClickedSavedMovies} onClick={handleClick} className={clickedButton}>{buttonInnerText}</button>
+                <img className="poster" src={Poster} alt={Title} />
+                <h3 className="movie-item-title">{Title} ({Year})</h3>
 
-                </p>
-                <button onClick={() => {
-                    dispatch(addToList({
-                        id: id,
-                        title: title,
-                        description: description
-                    }))
-                }} className="movie-item-add-to-list">Add to List</button>
-        </div>
+            </div>
+            
         </>
     )
 }
