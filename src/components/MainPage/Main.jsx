@@ -3,14 +3,16 @@ import SavedMoviesList from "../Saved Movies/SavedMoviesList";
 import Searchbar from "../Searchbar/Searchbar";
 import './Main.css'
 
-export default function Main () {
+export default function Main() {
     return (
         <>
+
+            <main>
                 <Searchbar />
-            <main className="main-container">
-                
-                <Movies />
-                <SavedMoviesList />
+                <div className="main-container">
+                    <Movies />
+                    <SavedMoviesList />
+                </div>
             </main>
         </>
     )

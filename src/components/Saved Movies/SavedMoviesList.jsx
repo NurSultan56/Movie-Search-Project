@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import './saved-movie-list.css'
-import SavedMoviesListItem from "./SavedMoviesListItem";
 import {useDispatch, useSelector} from 'react-redux'
 import { Link } from "react-router-dom";
 import { deleteFromList, notClickedChange } from "../../store/reducer";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './movie.css'
+import './movie-item.css'
 import { useDispatch, useSelector} from 'react-redux'
 import { addToList } from "../../store/reducer";
 import { deleteFromList } from "../../store/reducer";

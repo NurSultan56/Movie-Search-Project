@@ -13,7 +13,7 @@ function Searchbar() {
         <>
             <div className="searchbar">
                 <input type="text" name="search-movie" onChange={(e) => setInputValue(e.target.value)} />
-                <button className="search-button" onClick={() => { dispatch(fetchContent(inputValue)) }}> <img src="icons8-search.svg" alt="" /></button>
+                <button className="search-button" onClick={() => { dispatch(fetchContent(inputValue)) }}> Search</button>
             </div>
         </>
     )

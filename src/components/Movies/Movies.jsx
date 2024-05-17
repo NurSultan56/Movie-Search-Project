@@ -33,7 +33,7 @@ function Movies() {
     return (
         <>
             <div className="movies">
-                <h2 className="movie-list-title"></h2>
+                <h2 className="movie-list-title">Movies</h2>
 
                 <ul className="movie-list" >
                     {movies.map((item) => (
